@@ -15,11 +15,9 @@
             $newPassword = self::$newPassword;
             $loginLink = Yii::$app->urlManager->createAbsoluteUrl(['site/login']);
             $title = "ВОССТАНОВЛЕНИЕ ПАРОЛЯ";
-            $body = <<<HTML
-<p>Уважаемый, $user->name</p>
-<p>Ваш новый пароль: $newPassword</p>
-<p>Чтобы войти пройдите по ссылке и воспользуйтесь Вашим email'ом и новым паролем:</p>
-HTML;
+            $body = "Уважаемый, $user->name <br>";
+            $body .= "Ваш новый пароль: $newPassword <br>";
+            $body .= "Чтобы войти пройдите по ссылке и воспользуйтесь Вашим email'ом и новым паролем <br>";
 
             Email::sendEmail(
                 'mail-template-html',
